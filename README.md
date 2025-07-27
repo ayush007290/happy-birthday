@@ -1,9 +1,4 @@
-# Prepare a mobile-optimized version of the HTML with slightly larger buttons and responsive font sizes
 
-mobile_html_path = Path("/mnt/data/index_mobile.html")
-mobile_zip_path = Path("/mnt/data/Birthday_Card_Mobile.zip")
-
-mobile_html_content = '''<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -237,15 +232,3 @@ mobile_html_content = '''<!DOCTYPE html>
   </script>
 </body>
 </html>
-'''
-
-# Write mobile version HTML to file
-mobile_html_path.write_text(mobile_html_content, encoding='utf-8')
-
-# Create a ZIP for mobile-optimized package
-with zipfile.ZipFile(mobile_zip_path, 'w') as zipf:
-    zipf.write(mobile_html_path, arcname='index.html')
-    zipf.write(Path("/mnt/data/thank_you_music.mp3"), arcname='thank_you_music.mp3')
-
-mobile_zip_path.name
-# happy-birthday
